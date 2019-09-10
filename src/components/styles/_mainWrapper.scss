@@ -1,0 +1,11 @@
+.App {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  overflow-x: hidden;
+  background: linear-gradient(-75deg, rgba(black, .9), rgba($color-secondary, 0.979))
+}

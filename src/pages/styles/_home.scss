@@ -1,0 +1,37 @@
+.home {
+     height: 100%;
+     width: 100%;
+     position: relative;
+     // @include layer-primary;
+     z-index: 1;
+     
+     background: url(./../../images/home.png);
+     background-size: cover;
+
+
+     @include respond(tab-port) {
+          background-position-x: 50%;
+          height: 80%;
+          box-shadow: 0rem 0rem 4rem 2rem rgba(122, 122, 122, 0.24);
+     }
+     @include respond(phone) {
+          background-position-x: 50%;
+          height: 70%;
+          width: 100%
+     }
+}
+ 
+.header__text-box {
+     position: absolute;
+     left: 50%;
+     bottom: 0%;
+
+     transform: translate(-50%, -50%);
+     display: flex;
+     flex-direction: row;
+
+     @include respond(tab-port) {
+          transform: translate(-50%, -20%);
+          
+     }
+}
