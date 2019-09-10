@@ -6,7 +6,7 @@
 //      padding: 0;
 // }
 body {
-     font-family: 'NotoSans', sans-serif;
+     font-family: 'MartelSans', sans-serif;
      font-weight: 400;
      box-sizing: border-box;
      margin: 0;
@@ -14,4 +14,11 @@ body {
 }
 a {
      -webkit-tap-highlight-color: transparent;
+     text-decoration: none;
+}
+a:visited {
+     color: unset;
+}
+a:hover {
+     opacity: .4;
 }
