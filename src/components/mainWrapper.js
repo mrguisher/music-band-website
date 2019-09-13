@@ -1,12 +1,14 @@
 import React from 'react';
 
 import './../main.scss'
+import Navigation from './navigation';
 
 const MainWrapper = ({ children }) => {
      return (
-          <body>
-               {children}
-          </body>
+          <section className="App">
+          <Navigation></Navigation>
+               {children}   
+          </section>
      );
 };
 
