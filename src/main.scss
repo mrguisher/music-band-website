@@ -1,7 +1,12 @@
 @import './sass-utilities/mixins';
 @import './sass-utilities/variables';
 @import './sass-utilities/typography';
+@import './sass-utilities/base';
 
 @import './pages/styles/aktualnosci';
+@import './pages/styles/home';
+
+@import './components/styles/mainWrapper';
+@import './components/styles/navigation';
 
 
