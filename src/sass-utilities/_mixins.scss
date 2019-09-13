@@ -1,0 +1,32 @@
+@mixin layer-primary {
+     z-index: 2;
+     position: inherit;
+}
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+// media query manager
+
+@mixin respond($breakpoint) {
+     @if  $breakpoint == small-phone {
+         @media only screen and (max-width: 29.5rem) {@content};  //460px
+     }
+     @if  $breakpoint == phone {
+         @media only screen and (max-width: 37.5rem) {@content};  //600px
+     }
+     @if  $breakpoint == tab-port {
+         @media only screen and (max-width: 56.25rem) {@content}; //900px
+     }
+     @if  $breakpoint == tab-land {
+         @media only screen and (max-width: 75rem) {@content};   //1200px
+     }
+     @if  $breakpoint == big-desktop {
+         @media only screen and (min-width: 112.5rem) {@content};   //1800px 
+     }
+ 
+ 
+ }
