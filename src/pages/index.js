@@ -3,17 +3,23 @@ import { Link } from "gatsby"
 
 import SEO from "../components/seo"
 import MainWrapper from "./../components/mainWrapper"
+import Navigation from "../components/navigation"
+
+import Home from "./../images/home.png"
 
 const IndexPage = () => (
-  <MainWrapper>
+  <MainWrapper photo={Home} backgroundBlend={true}>
     <SEO title="Karolina Tuz - strona główna" />
-    <h1>Karolina Tuz</h1>
+    <div className="home">
+          <div className="header__text-box">
+            <h1 className="heading-primary">
+              <span className="heading-primary heading-primary--main">Karolina Tuz</span>
+              <span className="heading-primary heading-primary--sub">Strona oficjalna</span>
+            </h1>
+          </div>
+      </div>
     
-    <Link to="/aktualnosci">aktualnosci</Link>
-    <Link to="/koncerty">koncerty</Link>
-    <Link to="/kontakt">kontakt</Link>
-    <Link to="/muzyka">muzyka</Link>
-    <Link to="/galeria-zdjec">galeria-zdjec</Link>
+  {/* <Navigation></Navigation> */}
   </MainWrapper>
 )
 
