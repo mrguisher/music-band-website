@@ -1,0 +1,61 @@
+.yt-video {
+     background: url(./../../images/music.png);
+ }
+ .slider {
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     display: flex;
+     align-items: center;
+ }
+ .slider-content {
+     padding: 3rem 5rem;
+     border: 1px solid rgba(240, 248, 255, 0.815);
+     margin: 0 4rem;
+     width: 60vw;
+     height: 60vh;
+     /* display: flex; */
+ }
+ .slider__yt-frame {
+     /* position: absolute; */
+     text-align: center;
+     margin: auto auto;
+     
+}
+.arrow {
+     font-size: 5rem;
+     font-weight: 200;
+     color: rgba(240, 248, 255, 0.596);
+     cursor: pointer;
+}
+.arrow-left {
+     left: 20%;
+}
+.arrow-right {
+     right: 20%;
+}
+
+/* subscribe */
+.subscribe {
+     position: absolute;
+     bottom: 0;
+     display: inline;
+     width: 100%;
+     left: 50%;
+     transform: translate(-50%, 0%);
+}
+.subscribe-heading {
+     text-align: center;
+     font-weight: 100;
+     font-size: 2.5rem;
+     display: inline-block;
+     padding: 4rem 0;
+     color: rgba(240, 248, 255, 0.755);
+     z-index: 5;
+     margin-right: 6rem;
+}
+
+#widget6 {
+     transition: all 3s;
+}
