@@ -2,6 +2,25 @@
   font-family: "MartelSans";
   @import url('https://fonts.googleapis.com/css?family=Martel+Sans:200,400,700&display=swap&subset=latin-ext');
 }
+// colors
+.color-white {
+  color: $color-white;
+}
+.color-black {
+  &,
+  &::after,
+  &::before {
+    color: $color-black;
+  }
+}
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: 8px;
+}
+h3 {
+  font-size: 2rem;
+  letter-spacing: 5px;
+}
 .heading-primary {
   color: $color-white;
   text-align: center;
