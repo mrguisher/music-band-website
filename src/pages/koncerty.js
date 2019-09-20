@@ -1,17 +1,36 @@
 import React from 'react';
 
 import './../main.scss'
-import Home from "./../images/home.png"
 import MainWrapper from '../components/mainWrapper';
+import { StaticQuery, graphql } from "gatsby"
 
-const Koncerty = () => {
-     return (
-          <MainWrapper photo={Home} backgroundBlend={true}>
-          <div>
-               concerts
-          </div>
-          </MainWrapper>
-     );
-};
+const Concerts =  () => (
+   <StaticQuery
+      query={graphql`
+         query concertsQuery {
+            graphCMS {
+               events(orderBy: date_DESC) {
+                  cityName
+                  date
+                  facebookLink
+                  id
+                  locationLink
+                  placeName
+                  status
+                  street
+               }
+            }
+         }
+      `}
+      render={data => (
+         <MainWrapper navColor="black">
+            <div className="main news">
+               <p>concerts</p>
+               {console.log(data)}
+            </div>
+         </MainWrapper>
+      )}
+   />
+)
 
-export default Koncerty;
+export default Concerts;
