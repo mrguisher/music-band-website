@@ -3,11 +3,11 @@ import React from 'react';
 import './../main.scss'
 import Navigation from './navigation';
 
-const MainWrapper = ({ children }) => {
+const MainWrapper = ({ children, navColor }) => {
      return (
           <section className="App">
-          <Navigation></Navigation>
-               {children}   
+          <Navigation navColor={navColor}></Navigation>
+               {children}
           </section>
      );
 };
