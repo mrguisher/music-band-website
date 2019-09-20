@@ -1,3 +1,33 @@
-.band-members {
-     
+.band-members-wrapper {
+     width: 80vw;
+     height: 80vh;
+     margin: auto;
+}
+.member {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     max-width: 20vw;
+     color: $color-white;
+
+     &__image-box {
+          width: 10rem;
+          height: 10rem;
+          border-radius: 100%;
+          overflow: hidden;
+          border: none;
+          margin-bottom: 2rem;
+     }
+     &__img {
+          width: 100%;
+          
+     }
+     &__name {
+          margin-bottom: 2rem;
+     }
+     &__description {
+          text-align: center;
+          line-height: 1.8rem;
+     }
+
 }

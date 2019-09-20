@@ -1,8 +1,28 @@
 .news {
      background: url('./../../images/news.jpg')
 }
-.box1 {
-     // position: relative;
-     width: 100vw;
-     height: 100vh;
+.news-wrapper {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 75vw;
+     height: 65vh;
+     background-color: rgba(250, 235, 215, 0.288);
+     padding: 1rem;
+
+     &::after {
+          content: "\21E3";
+          font-size: 4rem;
+          color: $color-white;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%)
+     }
+}
+.post {
+     border: 2px solid $color-white;
+     padding: .5rem 2rem;
+     margin: 1rem;
 }
