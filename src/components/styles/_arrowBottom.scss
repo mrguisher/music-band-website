@@ -1,0 +1,9 @@
+.arrow-bottom::after {
+     content: "\21E3";
+          font-size: 4rem;
+          color: $color-white;
+          position: absolute;
+          bottom: 20%;
+          left: 50%;
+          transform: translateX(-50%)
+}
