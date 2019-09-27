@@ -2,38 +2,70 @@
      background: url(./../../images/music.png);
  }
  .slider {
+     border: 1px solid rgba(240, 248, 255, 0.815);
+     width: 70vw;
+     height: 60vh;
+     // overflow: hidden;
      position: absolute;
      left: 50%;
      top: 50%;
      transform: translate(-50%, -50%);
-     display: flex;
-     align-items: center;
- }
- .slider-content {
-     padding: 3rem 5rem;
-     border: 1px solid rgba(240, 248, 255, 0.815);
-     margin: 0 4rem;
-     width: 60vw;
-     height: 60vh;
-     /* display: flex; */
+
+
+     @include respond(tab-port) {
+          padding: 0;
+          width: 80vw;
+          height: 40vh;
+     }
+
+     @include respond(phone) {
+          padding: 0;
+          width: 95vw;
+          height: 40vh;
+     }
  }
  .slider__yt-frame {
-     /* position: absolute; */
-     text-align: center;
-     margin: auto auto;
-     
+      margin-bottom: 2rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      width: calc(100% - 130px);
+     // text-align: center;
 }
-.arrow {
-     font-size: 5rem;
-     font-weight: 200;
-     color: rgba(240, 248, 255, 0.596);
-     cursor: pointer;
+
+// react-carousel
+
+#slider > div > div > div {
+     margin-bottom: 4rem;
+     transform: translateX(-50%);
+     overflow: unset;
 }
-.arrow-left {
-     left: 20%;
+#slider > div > div > button.control-arrow.control-prev,
+#slider > div > div > button.control-arrow.control-next{
+     margin: auto 0;
+     height: 50%;
+
+     @include respond(phone) {
+          height: 40%;
+     }
+}    
+#slider > div > div > button.control-arrow.control-next{
+     padding-left: 4rem;
 }
-.arrow-right {
-     right: 20%;
+#slider > div > div > button.control-arrow::before {
+     border: none;
+}
+#slider > div > div > button.control-arrow.control-next::before {
+     content: ">";
+     top: 50%;
+     color: $color-white;
+     display: inline-block;
+     font-size: 4rem;
+}
+#slider > div > div > button.control-arrow.control-prev::before {
+     content: "<";
+     color: $color-white;
+     display: inline-block;
+     font-size: 4rem;
 }
 
 /* subscribe */
