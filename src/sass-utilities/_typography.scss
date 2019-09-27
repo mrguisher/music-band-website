@@ -21,6 +21,10 @@ h3 {
   font-size: 2rem;
   letter-spacing: 5px;
 }
+a:link,
+a:visited {
+  color: unset;
+}
 .heading-primary {
   color: $color-white;
   text-align: center;

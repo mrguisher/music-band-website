@@ -8,6 +8,17 @@
     left: 50%;
     transform: translate(-50%, -50%)
 }
+@mixin scroll-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vw;
+    height: 65vh;
+    background-color: rgba($color-white, 0.4);
+    padding: 2rem;
+    overflow: auto;
+}
 
 // media query manager
 
@@ -27,6 +38,4 @@
      @if  $breakpoint == big-desktop {
          @media only screen and (min-width: 112.5rem) {@content};   //1800px 
      }
- 
- 
- }
+}
