@@ -1,13 +1,15 @@
 import React from 'react';
 
-const Video = ({ src }) => (
-     <div className="video">
-       <iframe
-          src={src}
-         width="640" 
-         height="360"
-       />
-     </div>
-   )
-
+const Video = ({ id, width, height }) => (
+      <iframe
+        className="slider__yt-frame"
+        src={`https://www.youtube.com/embed/${id}`}
+        width={width} 
+        height={height}
+        frameBorder="0"
+        allowFullScreen
+        title="Karolina Tuz"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+      />
+)
 export default Video;
