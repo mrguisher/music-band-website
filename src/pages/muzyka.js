@@ -1,17 +1,76 @@
-import React from 'react';
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Carousel } from "react-responsive-carousel"
 
-import './../main.scss'
-import Home from "./../images/home.png"
-import MainWrapper from '../components/mainWrapper';
+import "./../main.scss"
+import MainWrapper from "../components/mainWrapper"
+import Video from "../components/video"
 
-const Muzyka = () => {
-     return (
-          <MainWrapper photo={Home} backgroundBlend={true}>
-               <div>
-                    music
-               </div>
-          </MainWrapper>
-     );
-};
+let videosIDs = []
 
-export default Muzyka;
+const pickVideosIDs = data => {
+  videosIDs.length = 0;
+  data.allYoutubeVideo.nodes.map(el =>
+    data.graphCMS.youtubes.map(
+      yt => yt.videoTitle === el.title && videosIDs.push(el.videoId)
+    )
+  )
+  // currentID = videosIDs[0]
+}
+
+const Music = () => (
+  <StaticQuery
+    query={graphql`
+      query MyQuery {
+        allYoutubeVideo {
+          nodes {
+            id
+            channelId
+            videoId
+            title
+            publishedAt
+            description
+          }
+        }
+        graphCMS {
+          youtubes {
+            id
+            status
+            videoTitle
+          }
+        }
+      }
+    `}
+    render={data => (
+      <MainWrapper navColor="black">
+        <div className="main yt-video">
+          <div className="slider" id="slider">
+          {pickVideosIDs(data)}
+            <Carousel
+              showArrows={true}
+              swipeable={true}
+              autoPlay={false}
+              showThumbs={false}
+              centerMode={true}
+              width="100%"
+              axis="horizontal"
+              centerSlidePercentage="100"
+              showStatus={false}
+            >
+              {videosIDs.map(id => (
+                <Video
+                  id={id}
+                  width="100%"
+                  height="100%"
+                  frameborder="0"
+                ></Video>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+      </MainWrapper>
+    )}
+  />
+)
+export default Music
