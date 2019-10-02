@@ -58,6 +58,9 @@ typings/
 .cache/
 public
 
+# images
+src/images
+
 # Mac files
 .DS_Store
 
