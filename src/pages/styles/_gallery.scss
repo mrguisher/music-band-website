@@ -1,0 +1,54 @@
+.gallery {
+     &__wrapper {
+     @include scroll-wrapper;
+     background-color: $color-white;
+}
+}
+.my-masonry-grid {
+     display: -webkit-box; /* Not needed if autoprefixing */
+     display: -ms-flexbox; /* Not needed if autoprefixing */
+     display: flex;
+     margin-left: -30px; /* gutter size offset */
+     width: 100%;
+
+     @include respond(tab-port) {
+          align-items: center;
+          margin-left: 0;
+     }
+   }
+   .my-masonry-grid_column {
+     padding-left: 30px; /* gutter size */
+     background-clip: padding-box;
+
+     @include respond(tab-port) {
+          display: flex;
+          flex-direction: column;
+          padding-left: 0;
+          align-items: center;
+     }
+   }
+    
+   // Style your items
+   .my-masonry-grid_column > img { /* change div to reference your elements you put in <Masonry> */
+
+     margin-bottom: 30px;
+     max-width: 90%;
+     max-height: 80%;
+
+     @include respond(tab-land) {
+          max-width: 30vw;
+     }
+     @include respond(tab-port) {
+          max-width: 70vw;
+          max-height: 90vh;
+     }
+   }
+//    .my-masonry-grid_column:nth-child(2) > div:nth-child(even) { 
+//      background: yellow;
+//    }
+//    .my-masonry-grid_column:nth-child(3) > div:nth-child(odd) { 
+//      background: rgb(88, 88, 8);
+//    }
+//    .my-masonry-grid_column:nth-child(1) > div:nth-child(odd) { 
+//      background: red;
+//    }
