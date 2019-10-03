@@ -17,6 +17,8 @@ Gatsby based music band website, integrated with GraphCMS using GrapgQL.
 * react-sweepable
 * react-carousel
 * gatsby-source-youtube
+* react-masonry-component
+* react-media
 
 ## Screenshots
 
