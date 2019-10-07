@@ -2,26 +2,42 @@
   "name": "music-band-website",
   "private": true,
   "description": "Music band website created with Gatsby",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Mateusz Pęciak <mrguishergui@gmail.com>",
   "dependencies": {
     "gatsby": "^2.15.9",
-    "gatsby-image": "^2.2.17",
+    "gatsby-image": "^2.2.23",
+    "gatsby-plugin-facebook-sdk": "^1.0.6",
     "gatsby-plugin-manifest": "^2.2.14",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-react-helmet": "^3.1.6",
     "gatsby-plugin-sass": "^2.1.13",
-    "gatsby-plugin-sharp": "^2.2.20",
+    "gatsby-plugin-sharp": "^2.2.27",
+    "gatsby-remark-embedder": "^1.2.0",
+    "gatsby-remark-images": "^3.1.25",
+    "gatsby-remark-lazy-load": "^1.0.2",
+    "gatsby-remark-responsive-iframe": "^2.2.16",
     "gatsby-source-filesystem": "^2.1.21",
-    "gatsby-transformer-sharp": "^2.2.13",
+    "gatsby-source-graphql": "^2.1.14",
+    "gatsby-source-youtube-v2": "^1.0.1",
+    "gatsby-transformer-remark": "^2.6.22",
+    "gatsby-transformer-sharp": "^2.2.19",
+    "imagesloaded": "^4.1.4",
+    "lazysizes": "^5.1.1",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-ionicons": "^3.0.1",
+    "react-masonry-component": "^6.2.1",
+    "react-media": "^1.10.0",
+    "react-responsive-carousel": "^3.1.50",
+    "react-swipeable": "^5.4.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2",
+    "react-masonry-css": "^1.0.12",
     "resolve-url-loader": "^3.1.0"
   },
   "keywords": [
@@ -38,9 +54,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/mrguisher/music-band-website"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+    "url": "https://github.com/mrguisher/music-band-website/issues"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ]
 }
