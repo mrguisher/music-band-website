@@ -1,33 +1,50 @@
-.band-members-wrapper {
-     width: 80vw;
-     height: 80vh;
-     margin: auto;
+.band-wrapper {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     @include scroll-wrapper;
+
+     @include respond(tab-land) {
+          background-color: rgba($color-white, 0.4) !important;
+     }
 }
 .member {
      display: flex;
      flex-direction: column;
      align-items: center;
-     max-width: 20vw;
-     color: $color-white;
+     max-width: 50vw;
+     margin-bottom: 4rem;
+
+     @include respond(tab-land) {
+          max-width: 60vw;
+     }
+     @include respond(phone) {
+          max-width: 70vw;
+     }
 
      &__image-box {
-          width: 10rem;
-          height: 10rem;
-          border-radius: 100%;
+          max-width: 10rem;
+          max-height: 10rem;
+          border-radius: 1rem;
           overflow: hidden;
           border: none;
           margin-bottom: 2rem;
+          box-shadow: $shadow-large;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
      }
      &__img {
           width: 100%;
-          
+          height: 100%;
      }
      &__name {
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
+          text-align: center;
+          letter-spacing: 1px;
      }
      &__description {
           text-align: center;
-          line-height: 1.8rem;
+          line-height: 1.6rem;
      }
-
 }

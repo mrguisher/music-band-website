@@ -1,8 +1,14 @@
 .gallery {
      &__wrapper {
-     @include scroll-wrapper;
-     background-color: $color-white;
-}
+          @include absCenter;
+          overflow: auto;
+          height: 60vh;
+          width: 70vw !important;
+
+          @include respond(phone) {
+               width: 80vw !important;
+          }
+     }
 }
 .my-masonry-grid {
      display: -webkit-box; /* Not needed if autoprefixing */
@@ -43,12 +49,3 @@
           max-height: 90vh;
      }
    }
-//    .my-masonry-grid_column:nth-child(2) > div:nth-child(even) { 
-//      background: yellow;
-//    }
-//    .my-masonry-grid_column:nth-child(3) > div:nth-child(odd) { 
-//      background: rgb(88, 88, 8);
-//    }
-//    .my-masonry-grid_column:nth-child(1) > div:nth-child(odd) { 
-//      background: red;
-//    }

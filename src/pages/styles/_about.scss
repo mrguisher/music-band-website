@@ -1,0 +1,17 @@
+.about {
+     &__wrapper {
+          @include scroll-wrapper;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+     
+          @include respond(tab-land) {
+               background-color: rgba($color-white, 0.4) !important;
+          }
+     }
+     &__text {
+          line-height: 1.6rem;
+          font-size: 1.1rem;
+          letter-spacing: 2px;
+     }
+}

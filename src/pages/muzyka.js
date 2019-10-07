@@ -4,25 +4,27 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
 
 import "./../main.scss"
+import MobileImg from './../images/music-mobile.jpg'
+import DesktopImg from './../images/music.jpg'
+import BackgroundImg from './../components/bcgImage'
 import MainWrapper from "../components/mainWrapper"
 import Video from "../components/video"
 
 let videosIDs = []
 
 const pickVideosIDs = data => {
-  videosIDs.length = 0;
+  videosIDs.length = 0
   data.allYoutubeVideo.nodes.map(el =>
     data.graphCMS.youtubes.map(
       yt => yt.videoTitle === el.title && videosIDs.push(el.videoId)
     )
   )
-  // currentID = videosIDs[0]
 }
 
 const Music = () => (
   <StaticQuery
     query={graphql`
-      query MyQuery {
+      query musicQuery {
         allYoutubeVideo {
           nodes {
             id
@@ -43,10 +45,18 @@ const Music = () => (
       }
     `}
     render={data => (
-      <MainWrapper navColor="black">
+      <MainWrapper navColor="black" headingColor="black" heading="Muzyka">
         <div className="main yt-video">
+          <BackgroundImg
+            desktopImg={DesktopImg}
+            tabImg={DesktopImg}
+            mobileImg={MobileImg}
+            desktopImgAlign={"left-bottom"}
+            midImgAlign={"left-bottom"}
+            smallImgAlign={"right-bottom"}
+          ></BackgroundImg>
           <div className="slider" id="slider">
-          {pickVideosIDs(data)}
+            {pickVideosIDs(data)}
             <Carousel
               showArrows={true}
               swipeable={true}

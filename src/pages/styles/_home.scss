@@ -1,25 +1,6 @@
 .home {
-     background: url(./../../images/home.png);
+   
 }
-.main {
-     height: 100vh;
-     width: 100vw;
-     position: relative;
-     z-index: 1;
-     background-size: cover;
-
-     @include respond(tab-port) {
-          background-position-x: 50%;
-          height: 80%;
-          box-shadow: 0rem 0rem 4rem 2rem rgba(122, 122, 122, 0.24);
-     }
-     @include respond(phone) {
-          background-position-x: 50%;
-          height: 70%;
-          width: 100%
-     }
-}
- 
 .header__text-box {
      position: absolute;
      left: 50%;
@@ -31,6 +12,5 @@
 
      @include respond(tab-port) {
           transform: translate(-50%, -20%);
-          
      }
 }
