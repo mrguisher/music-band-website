@@ -1,12 +1,20 @@
 @import './sass-utilities/mixins';
-@import './sass-utilities/variables';
-@import './sass-utilities/typography';
 @import './sass-utilities/base';
+@import './sass-utilities/variables';
+@import './sass-utilities/utilities';
 
 @import './pages/styles/aktualnosci';
+@import './pages/styles/muzyka';
+@import './pages/styles/koncerty';
+@import './pages/styles/kontakt';
+@import './pages/styles/zespol';
 @import './pages/styles/home';
+@import './pages/styles/about';
+
+@import './pages/styles/gallery';
+// @import './pages/styles/404';
 
 @import './components/styles/mainWrapper';
 @import './components/styles/navigation';
 
-
+@import './sass-utilities/typography';
