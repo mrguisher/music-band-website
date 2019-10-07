@@ -12,15 +12,17 @@ body {
      margin: 0;
      padding: 0;
 }
-a {
-     -webkit-tap-highlight-color: transparent;
-     text-decoration: none;
-}
-a:visited {
-     color: unset;
-}
-a:hover {
-     opacity: .4;
-}
+.main {
+     height: 100vh;
+     width: 100vw;
+     position: relative;
+     z-index: 1;
+     overflow: hidden;
 
-// 
+     @include respond(tab-land) {
+          height: 60%;
+     }
+     @include respond(phone) {
+          width: 100%
+     }
+}

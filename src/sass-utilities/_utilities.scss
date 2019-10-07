@@ -1,0 +1,64 @@
+.lazyload,
+.lazyloading {
+    opacity: 0;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+.bcg-image {
+     position: absolute;
+     width: 100%;
+     height: auto;
+
+     @include respond(phone) {
+          width: 120vw;
+     }
+
+     &--left-top {
+          left: 0;
+          top: 0;
+     }
+     &--right-top {
+          right: 0;
+          top: 0;
+     }
+     &--left-bottom {
+          left: 0;
+          bottom: 0;
+     }
+     &--right-bottom {
+          right: 0;
+          bottom: 0;
+     }
+}
+.bcg-image__normal-width {
+     width: 100%;
+}
+.bcg-image__wider {
+     width: 120%;
+
+     @include respond(tab-land) {
+          width: 100%;
+     }
+}
+
+// animations
+@keyframes moveDownArrow {
+     0% {
+         opacity: 0;
+         transform: translate(0, 0);
+     }
+     20% {
+         opacity: .4;
+         transform: translate(0, 0);
+     }
+     80% {
+         opacity: 1;
+         transform: translate(0, 8rem);
+     }
+     100% {
+         opacity: 0;
+         transform: translate(0, 15rem);
+     }
+ }
