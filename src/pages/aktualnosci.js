@@ -6,7 +6,7 @@ import MobileImg from './../images/news-mobile.jpg'
 import DesktopImg from './../images/news.jpg'
 import BackgroundImg from './../components/bcgImage'
 import MainWrapper from '../components/mainWrapper';
-import Arrow from '../components/arrow';
+import SEO from "../components/seo"
 
 const News = () => (
      <StaticQuery
@@ -25,13 +25,12 @@ const News = () => (
           `}
      render={data => (
           <MainWrapper navColor="black" heading="Aktualności" headingColor="black">
+           <SEO title="Aktualności" />
                <div className="main">
                <BackgroundImg 
                     desktopImg={DesktopImg}
-                    tabImg={DesktopImg}
                     mobileImg={MobileImg}
                     desktopImgAlign={"left-top"}
-                    midImgAlign={"right-bottom"}
                     smallImgAlign={"right-top"}
                     additionalClass="bcg-image__wider"
                >
@@ -45,7 +44,6 @@ const News = () => (
                               </div>
                          ))
                          }
-                         <Arrow></Arrow>
                     </section>
                </div>
                

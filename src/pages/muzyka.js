@@ -9,6 +9,7 @@ import DesktopImg from './../images/music.jpg'
 import BackgroundImg from './../components/bcgImage'
 import MainWrapper from "../components/mainWrapper"
 import Video from "../components/video"
+import SEO from "../components/seo"
 
 let videosIDs = []
 
@@ -46,13 +47,12 @@ const Music = () => (
     `}
     render={data => (
       <MainWrapper navColor="black" headingColor="black" heading="Muzyka">
+      <SEO title="Muzyka" />
         <div className="main yt-video">
           <BackgroundImg
             desktopImg={DesktopImg}
-            tabImg={DesktopImg}
             mobileImg={MobileImg}
             desktopImgAlign={"left-bottom"}
-            midImgAlign={"left-bottom"}
             smallImgAlign={"right-bottom"}
           ></BackgroundImg>
           <div className="slider" id="slider">

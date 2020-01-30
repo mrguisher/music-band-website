@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby";
 import MainWrapper from "../components/mainWrapper"
 import "./../main.scss"
 import Masonry from 'react-masonry-css'
+import SEO from "../components/seo"
 
 const breakpointColumnsObj = {
   default: 3,
@@ -15,20 +16,23 @@ const GaleriaZdjec = () => (
   <StaticQuery
     query={graphql`
       query galleryQuery {
-        graphCMS {
-          images(orderBy: createdAt_DESC) {
-            id
-            shortDescription
-            image {
-              id
-              url
-            }
+        allInstaNode {
+      edges {
+        node {
+          id
+          dimensions {
+            height
+            width
           }
+          preview
         }
+    }
+  }
       }
     `}
     render={data => (
   <MainWrapper heading="Galeria" headingColor="black">
+  <SEO title="Galeria zdjęć" />
     <div className="main gallery">
       <div className="gallery__wrapper" id="gallery-container">
       <Masonry
@@ -36,8 +40,8 @@ const GaleriaZdjec = () => (
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-      {data.graphCMS.images.map((photo) => (
-        <img data-src={photo.image.url} key={photo.id} alt="gallery" className="lazyload"></img>
+      {data.allInstaNode.edges.map((image) => (
+          <img data-src={image.node.preview} key={image.node.id} alt="gallery" className="lazyload"></img>
       ))}
       </Masonry>
       </div>

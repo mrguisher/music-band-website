@@ -1,0 +1,15 @@
+.arrow {
+     display: none;
+
+     @include respond(tab-land) {
+          display: inline-block;
+          position: absolute;
+          bottom: 10%;
+          left: 45%;
+          transform: translate(-50%, -50%);
+          height: 8%;
+          width: 10%;
+          fill: rgb(196, 196, 196);
+          animation: moveDownArrow infinite 2s;
+     }     
+} 

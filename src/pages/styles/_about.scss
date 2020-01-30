@@ -4,14 +4,28 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-     
+          
           @include respond(tab-land) {
                background-color: rgba($color-white, 0.4) !important;
           }
      }
      &__text {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
           line-height: 1.6rem;
           font-size: 1.1rem;
           letter-spacing: 2px;
+          width: fit-content;
+          padding: 40px;
+			 overflow-wrap: break-word;
+			 margin-bottom: 20px;
+
+          @include respond(tab-land) {
+               font-size: .88rem;
+               letter-spacing: 1px;
+               width: 95%;
+          }
      }
 }

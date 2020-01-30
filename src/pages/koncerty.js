@@ -6,7 +6,22 @@ import MobileImg from './../images/concerts-mobile.jpg'
 import DesktopImg from './../images/concerts.jpg'
 import BackgroundImg from './../components/bcgImage'
 import { StaticQuery, graphql } from "gatsby";
-import Arrow from '../components/arrow';
+import SEO from "../components/seo"
+
+const months = {
+  sty: '01',
+  lut: '02',
+  mar: '03',
+  kwi: '04',
+  maj: '05',
+  cze: '06',
+  lip: '07',
+  sie: '08',
+  wrz: '09',
+  paź: '10',
+  lis: '11',
+  gru: '12'
+}
 
 const Concerts = () => (
   <StaticQuery
@@ -28,34 +43,39 @@ const Concerts = () => (
     `}
     render={data => (
       <MainWrapper navColor="white" heading="Koncerty" headingColor="black">
+      <SEO title="Koncerty" />
         <div className="main">
         <BackgroundImg 
             desktopImg={DesktopImg}
-            tabImg={DesktopImg}
             mobileImg={MobileImg}
             desktopImgAlign={"left-bottom"}
-            midImgAlign={"left-bottom"}
             smallImgAlign={"right-top"}
         >
         </BackgroundImg>
           <div className="concerts-wrapper">
             {data.graphCMS.events.map(
-              event =>
-                event.status === "PUBLISHED" && (
+              ({ status,
+                cityName,
+                placeName,
+                street,
+                facebookLink,
+                locationLink,
+                date }) =>
+                status === "PUBLISHED" && (
                   <div className="event">
                     <div className="event__left-wrapper">
-                      <h2 className="event__city">{event.cityName}</h2>
-                      <h3 className="event__place">{event.placeName}</h3>
-                      <p className="event__street">ul. {event.street}</p>
+                      <h2 className="event__city">{cityName}</h2>
+                      <h3 className="event__place">{placeName}</h3>
+                      <p className="event__street">{street}</p>
                       <a
-                        href={event.facebookLink}
+                        href={facebookLink}
                         target="_blank"
                         className="event__fb btn btn__fill"
                       >
                         więcej
                       </a>
                       <a
-                        href={event.locationLink}
+                        href={locationLink}
                         target="_blank"
                         className="event__location btn btn__fill"
                       >
@@ -64,13 +84,13 @@ const Concerts = () => (
                     </div>
 
                     <p className="event__date">
-                      <span className="event__date--number">4</span>
-                      <span className="event__date--month">wrz</span>
+                      <span className="event__date--number">{date.slice(8,10)}</span>
+                      <span className="event__date--month">{Object.entries(months).find((el) => el[1] === date.slice(5,7))[0]}</span>
                     </p>
                   </div>
                 )
             )}
-            <Arrow></Arrow>
+            
           </div>
           
         </div>

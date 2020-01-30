@@ -1,8 +1,21 @@
 .band-wrapper {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     @include scroll-wrapper;
+		position: absolute;
+		display: flex;
+     flex-flow: row wrap;
+	  align-items: center;
+	  top: 50%;
+	  left: 50%;
+	  height: 70%;
+	  transform: translate(-50%, -50%);
+	  background-color: rgba($color-white, 0.4);
+	  padding: 2rem;
+	  overflow-y: auto;
+ 
+	  @include respond(tab-land) {
+		flex-flow: column nowrap;
+		width: 100%;
+		height: 100%;
+	  }
 
      @include respond(tab-land) {
           background-color: rgba($color-white, 0.4) !important;
@@ -12,24 +25,24 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     max-width: 50vw;
+     width: calc(50% - 8px);
      margin-bottom: 4rem;
 
      @include respond(tab-land) {
-          max-width: 60vw;
+          max-width: 60%;
      }
      @include respond(phone) {
-          max-width: 70vw;
+          width: 70%;
      }
 
      &__image-box {
           max-width: 10rem;
           max-height: 10rem;
-          border-radius: 1rem;
+          border-radius: 5px;
           overflow: hidden;
           border: none;
           margin-bottom: 2rem;
-          box-shadow: $shadow-large;
+          box-shadow: $shadow-small;
           display: flex;
           flex-direction: column;
           justify-content: center;

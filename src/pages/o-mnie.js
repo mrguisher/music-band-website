@@ -6,6 +6,7 @@ import DesktopImg from "./../images/about.jpg"
 import BackgroundImg from "./../components/bcgImage"
 import MainWrapper from "../components/mainWrapper"
 import { StaticQuery, graphql } from "gatsby"
+import SEO from "../components/seo"
 
 const O_mnie = () => (
   <StaticQuery
@@ -22,13 +23,12 @@ const O_mnie = () => (
     `}
     render={data => (
       <MainWrapper navColor="white" heading="O mnie" headingColor="black">
+      <SEO title="O mnie" />
         <div className="main about">
           <BackgroundImg
             desktopImg={DesktopImg}
-            tabImg={DesktopImg}
             mobileImg={MobileImg}
             desktopImgAlign={"left-bottom"}
-            midImgAlign={"left-bottom"}
             smallImgAlign={"left-bottom"}
           ></BackgroundImg>
           <div className="about__wrapper">

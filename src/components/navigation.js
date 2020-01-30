@@ -2,6 +2,11 @@ import React, { Component } from "react"
 import { Link } from "gatsby"
 import "./../main.scss"
 
+import Spotify from '../icons/socials/spotify.png'
+import Youtube from '../icons/socials/youtube.png'
+import Facebook from '../icons/socials/facebook.png'
+import Instagram from '../icons/socials/instagram.png'
+
 import MdClose from "react-ionicons/lib/MdClose"
 import MdMenu from "react-ionicons/lib/MdMenu"
 import Media from "react-media"
@@ -65,6 +70,7 @@ class Navigation extends Component {
                query="(min-width: 1200px)"
                render={() =>
                   this.classes.map(el => (
+                     <React.Fragment>
                      <nav
                         className={
                            el === "navigation"
@@ -93,12 +99,13 @@ class Navigation extends Component {
                               {el === "navigation" && `${item.name}`}
                            </Link>
                         ))}
-                        <a href="rider.pdf" className={
+                        {/* <a href="rider.pdf" className={
                                  el === "navigation"
                                     ? "navigation__item"
                                     : null
-                              }>{el === "navigation" && 'Pobierz rider'}</a>
+                              }>{el === "navigation" && 'Pobierz rider'}</a> */}
                      </nav>
+                     </React.Fragment>
                   ))
                }
             />
@@ -127,12 +134,12 @@ class Navigation extends Component {
                                  {item.name}
                               </Link>
                            ))}
-                           <a href="rider.pdf" className="nav-mobile__item">Pobierz rider</a>
+                           {/* <a href="rider.pdf" className="nav-mobile__item">Pobierz rider</a> */}
                         </nav>
                      </Swipeable>
-                           <h2 className={`category__heading color-${this.props.headingColor}`}>
+                           <h1 className={`category__heading color-${this.props.headingColor}`}>
                            {this.props.heading}
-                           </h2>
+                           </h1>
 
                         {this.state.navStatus === "hidden" ? (
                            <MdMenu
@@ -150,6 +157,29 @@ class Navigation extends Component {
                   </React.Fragment>
                )}
             />
+
+        { ["min-width: 1200px", "max-width: 1199px"].map((mediaQuery) => (
+            <Media
+                  query={`(${mediaQuery})`}
+                  render={() => (
+                     <section className="socials">
+                        <a href="https://open.spotify.com/artist/52DrgL4hZ0NnEnOSw7yfcr" target="_blank">
+                           <img src={Spotify} alt="spotify" className="socials__item"/>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCbNGaXCeZFf5T0RKYfDB-uw" target="_blank">
+                           <img src={Youtube} alt="youtube" className="socials__item"/>
+                        </a>
+                        <a href="https://pl-pl.facebook.com/karolinatuz.muzyk" target="_blank">
+                           <img src={Facebook} alt="facebook" className="socials__item socials__fb"/>
+                        </a>
+                        <a href="https://www.instagram.com/karolina_tuz_muzyka/?hl=pl" target="_blank">
+                           <img src={Instagram} alt="instagram" className="socials__item"/>
+                        </a>
+                        
+                     </section>
+                  )}
+               />
+         )) }
          </React.Fragment>
       )
    }

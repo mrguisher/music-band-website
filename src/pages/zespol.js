@@ -5,7 +5,7 @@ import MobileImg from './../images/band-mobile.jpg'
 import DesktopImg from './../images/band.jpg'
 import BackgroundImg from './../components/bcgImage'
 import MainWrapper from '../components/mainWrapper';
-import Arrow from '../components/arrow';
+import SEO from "../components/seo"
 
 import { StaticQuery, graphql } from "gatsby"
 
@@ -29,13 +29,12 @@ const BandMembers = () => (
       `}
       render={data => (
          <MainWrapper navColor="white" heading="Zespół" headingColor="black">
+         <SEO title="Zespół" />
             <div className="main">
             <BackgroundImg 
                   desktopImg={DesktopImg}
-                  tabImg={MobileImg}
                   mobileImg={MobileImg}
                   desktopImgAlign={"left-bottom"}
-                  midImgAlign={"left-top"}
                   smallImgAlign={"right-top"}
             >
             </BackgroundImg>
@@ -49,7 +48,6 @@ const BandMembers = () => (
                               <p className="member__description">{el.memberInfo}</p>
                          </div>
                     ))}
-                    <Arrow></Arrow>
                </section>
                
             </div>

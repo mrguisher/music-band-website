@@ -1,4 +1,13 @@
 /* NAVIGATION TOP*/
+@mixin bar {
+  background-color: transparent;
+  border-radius: 3rem;
+  box-shadow: none;
+  transition-property: box-shadow, background;
+  transition: .5s;
+
+}
+
 .nav-bar {
   position: absolute;
   display: inline-block;
@@ -9,20 +18,18 @@
   z-index: 5;
   padding: .8rem 2rem;
   font-size: .7rem;
-  color: $color-white;
-  background-color: transparent;
-  border-radius: 3rem;
   margin-top: 2rem;
   margin-right: 2rem;
-  box-shadow: none;
-  transition-property: box-shadow, background;
-  transition: .5s;
+  color: $color-white;
+
+  @include bar;
 
   &:hover {
     background-color: rgba($color-white, .7);
     box-shadow: 0 5px 1rem 0 rgba($color-black, .5);
     color: $color-black;
   }
+  
   @include respond(tab-land) {
     display: none;
   }
@@ -143,5 +150,50 @@
   @include respond(small-phone) {
     top: 4vh;
     width: 15%;
+  }
+}
+// socials fb, yt, instagram, spotify
+.socials {
+  z-index: 2;
+  position: absolute;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include bar;
+
+  background-color: rgba($color-white, .1);
+  box-shadow: 0 5px 1rem 0 rgba($color-black, .5);
+
+  &:hover {
+    background-color: rgba($color-white, .5);
+  }
+
+  @include respond(tab-land) {
+    flex-direction: row;
+    left: 50%;
+    top: unset;
+    bottom: 10%;
+    transform: translateX(-50%);
+    background-color: unset;
+    border-radius: 1rem;
+    box-shadow: unset;
+
+  }
+  &__item {
+    height: 1.5rem;
+    margin: 1rem .3rem;
+
+    @include respond(tab-land) {
+      height: 1.8rem;
+      margin: 0 .5rem;
+    }
+  }
+  &__fb {
+    height: 1.8rem;
   }
 }
